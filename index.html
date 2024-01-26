@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Website with Sound</title>
+  <style>
+      {
+      margin: 0;
+    }
+    body {
+      width: 100%;
+      height: 100vh;
+      background: url(videoplayback.webm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    form
+    {
+      width: auto;
+      height: auto;
+      padding: 20px;
+      border-radius: 10px;
+      background: #4A4856B0;
+    }
+    #success#070709{
+  color: #000000;
+  margin-top: -20px;
+
+  display: block;
+}
+
+
+ 
+  </style>
+<style>
+    /* Style for the transparent button */
+    .transparent-button {
+      margin: 10px;
+      background-color: transparent;
+      border: 2px solid #ffffff; /* You can change the border color */
+      color: #ffffff; /* You can change the text color */
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+  
+  
+</head>
+<body>
+<video id="video-background" autoplay muted loop>
+    <source src="videoplayback.webm" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+    <form name="submit-to-google-sheet">
+      <lable><font color=white>OFF DAY:</font></lable>
+      <input type="text" name="OFF DAY" ><br><br>
+   
+       <lable><font color=white>ADJUST DAY:</lable>
+       <input type="text" name="ADJUST DAY"><br><br>
+       <lable><font color=white>RUNNING DAY:</lable>
+       <input type="text" name="RUNNING DAY"><br><br>
+       <lable><font color=white>OFF:</lable>
+       <input type="text" name="OFF"><br><br>
+       <lable><font color=white>ON:</lable>
+       <input type="text" name="ON"><br><br>
+       <lable><font color=white>HANDEL:</lable>
+       <input type="text" name="HANDEL"><br><br>
+       <lable><font color=white>NAME :</lable>
+       <input type="text" name="NAME"><br><br>
+       
+        <lable><font color=white>SHIFT:</lable>
+        <input type="radio" name="SHIFT" value="A"><lable><font color=white>A</lable>
+      <input type="radio" name="SHIFT" value="B"><lable><font color=white>B</lable>
+         <input type="radio" name="SHIFT" value="C"><lable><font color=white>C</lable><br><br>
+         
+         <lable><font color=white>Remark:</lable>
+         <input type="text" name="Remark" Remark><br><br>
+         <center>
+           
+         <button>Submit</button></center><br><br>
+<span id="success"></span>
+    </form>
+<div id="button-container">
+  <center>
+          <a href="https://docs.google.com/spreadsheets/d/1bmyePTUMMiR3bKr1yERN4mBES4BezC6-GfQ6_dNu0dc/edit?usp=sharing" class="transparent-button">Find data</a>
+             <a href="https://docs.google.com/spreadsheets/d/1bmyePTUMMiR3bKr1yERN4mBES4BezC6-GfQ6_dNu0dc/edit?usp=sharing" class="transparent-button">LOG OUT</a>
+          </center>
+      
+
+    <!-- Add more buttons as needed -->
+  </div>
+
+  <script>
+    document.querySelectorAll('.custom-button').forEach(function(button) {
+      button.addEventListener('click', function(event) {
+        event.preventDefault();
+        openFile(this.href);
+      });
+    });
+
+    function openFile(fileSrc) {
+      // Check if the file is an image or PDF
+      if (fileSrc.toLowerCase().endsWith(".pdf")) {
+        // Trigger PDF download
+        var a = document.createElement('a');
+        a.href = fileSrc;
+        a.download = fileSrc.split('/').pop();
+        a.click();
+      } else {
+        // Display image (you may add your image display logic here)
+        console.log('Image clicked');
+      }
+    }
+  </script>
+</body>
+</html>
+  <script>
+    document.querySelectorAll('.custom-button').forEach(function(button) {
+      button.addEventListener('click', function(event) {
+        event.preventDefault();
+        openFile(this.href);
+      });
+    });
+
+    function openFile(fileSrc) {
+      // Check if the file is an image or PDF
+      if (fileSrc.toLowerCase().endsWith(".pdf")) {
+        // Trigger PDF download
+        var a = document.createElement('a');
+        a.href = fileSrc;
+        a.download = fileSrc.split('/').pop();
+        a.click();
+      } else {
+        // Display image (you may add your image display logic here)
+        console.log('Image clicked');
+      }
+    }
+  </script>
+  <script>
+    document.querySelectorAll('.custom-button').forEach(function(button) {
+      button.addEventListener('click', function(event) {
+        event.preventDefault();
+        openFile(this.href);
+      });
+    });
+
+    function openFile(fileSrc) {
+      // Check if the file is an image or PDF
+      if (fileSrc.toLowerCase().endsWith(".pdf")) {
+        // Trigger PDF download
+        var a = document.createElement('a');
+        a.href = fileSrc;
+        a.download = fileSrc.split('/').pop();
+        a.click();
+      } else {
+        // Display image (you may add your image display logic here)
+        console.log('Image clicked');
+      }
+    }
+  </script>
+  <script>
+
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzQTn_ZcOGkEs6WVUDumRsDd642ECPof3OIjJnNJVsGKaNaGikUVUlLHQfkIYpgYDLpvQ/exec'
+
+  const form = document.forms['submit-to-google-sheet']
+const success = document.getElementById('success')
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {success.innerHTML="Data Successfully Submitted";
+        setTimeout(function(){
+          success.innerHTML="";},5000)
+        form.reset();
+      })
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+</body>
+</html>
